@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Add Course </title>
+</head>
+
+<script>
+let courseName,midterm,finalGrade;
+    function add() {
+    courseName=names.value;
+    midterm=Number(mid.value);
+	let finalGrade=Number(final.value);
+	let i;
+	dizi=[courseName,midterm,finalGrade];
+	for(i=0;i<dizi2.length;i++){
+     if(courseName == dizi2[i][0]){
+	 return ;
+	 }
+	
+
+	} dizi2.push(dizi);
+	}
+    function print(){
+	outA.innerText =" ";
+	let i;
+	for(i=0;i<dizi2.length;i++){
+	outA.innerText +=dizi2[i][0]+" "+dizi2[i][1]+" "+dizi2[i][2]+"\n";
+	}
+	}
+	
+	function average(){
+	outB.innerText =" ";
+	let i,j,vizeNotu,finalNotu,ortalama;
+	
+	console.log(ortalama);
+	for(i=0;i<dizi2.length;i++){
+	vizeNotu=dizi2[i][1];
+	finalNotu=dizi2[i][2];
+	ortalama=(vizeNotu+finalNotu)/2;
+	ortDizi.push(ortalama);
+	
+	outB.innerText +=dizi2[i][0]+ "    " +ortalama+"\n";
+	
+	}
+	}
+	
+	function findMax(){
+	outC.innerText="";
+	let i;
+	let enbuyuk=ortDizi[0];
+	for(i=0;i<ortDizi.length ; i++){
+	if(ortDizi[i]>enbuyuk){
+	enbuyuk =ortDizi[i];
+	outC.innerText = dizi2[i][0]+ "    "+enbuyuk+"\n";
+	}
+	
+	
+	
+	}
+
+}
+
+
+</script>
+
+<body>
+<h2 id=title>Add Course</h2>
+
+
+<p>
+name = <input type="text" id="names" value=" beyza" style="width:99px" > &emsp; <br><br>
+midterm = <input type="number"   id="mid" value= 30  style="width:99px"> &emsp; <br><br>
+final =<input type="number"   id="final" value=70 style="width:99px"> 
+</p><p>
+<input type=button value="add"  onClick="add()">
+<input type=button value="print"  onClick="print()">
+<input type=button value="average"  onClick="average()">
+<input type=button value="max"   onClick="findMax()">
+</p>
+
+<hr />
+
+<strong>
+Name Midterm Final 
+
+</strong> 
+
+<p id=outA>
+</p>
+
+
+<strong>
+Name Average
+
+</strong> 
+<p id=outB>
+</p>
+
+<strong>
+Name Max 
+
+</strong> 
+
+<p id=outC>
+</p>
+<hr />
+
+<script>
+    title.innerText = document.title;
+	var dizi= [];
+    var dizi2= [];
+	var ortDizi=[];
+
+
+</script>
+
+</body>
+</html>
