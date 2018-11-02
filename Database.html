@@ -1,0 +1,273 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Student Database BEYZA </title>
+	 <script src="Database.js"></script>
+
+  <style>
+    .link {
+        color: blue;
+        cursor: pointer;
+        font-style: italic;
+    }
+    .course {
+        visibility: hidden;
+        font: 10px arial, sans-serif;
+        color: white;
+        background: blue;
+        cursor: text;
+        padding: 6px;
+        position: absolute;
+        height: 90px;
+        overflow-y: auto;
+    }
+    .link:hover .course { 
+        visibility: visible; 
+    }
+	body{
+	background-image:url("dark-brick-wall.jpg");
+	color:white;
+	}
+  </style>
+
+<script>
+"use strict";
+function report(msg, id, list) {
+    out.innerHTML += "<br>"; msg += " ";
+    out.appendChild(document.createTextNode(msg));
+    let n1;
+    if (id) {
+        n1 = document.createElement("span");
+        n1.appendChild(document.createTextNode(id));
+        n1.classList.add("link");
+        out.appendChild(n1); msg += id;
+        //n1.addEventListener("click", doClick);
+    }
+    if (list) {
+        let n2 = document.createElement("span");
+        n2.appendChild(document.createTextNode(""));
+        n2.innerHTML += list.join("<br>");
+        n2.classList.add("course");
+        if (n1) n1.appendChild(n2);
+    }
+    console.log(msg);
+}
+
+const url = "https://beyzakoser.github.io/odevler/";
+
+
+
+function randomStd() {
+    let i = Math.trunc(students.size * Math.random());
+    let b = students.get(i);
+    report("Random: "+b.name, b.id);
+}
+
+function aboveGPA() {
+    let number=Number(gpaid.value);
+	if(!gpaid.value){
+	report("alanı doldurun.");
+	}
+
+	let counter=0;
+    for (var i=0;i<students.size;i++) {
+	 if(students.get(i).gpa > number){
+	 counter++;   	  
+	 }
+	} 
+	 report( counter+" kisinin ortalaması "+number+" dan yuksek");
+} 
+
+function getCoursesGivenStdId(){
+    
+    let studentId=Number(stdId.value);
+	if(!stdId.value){
+	report("alanı doldurun.");
+	} 
+	var sonuc=false
+	for (var i=0;i<students.size;i++) { //tekrar bak bu koda çalışmıyor.
+
+	 if( studentId == students.get(i).id){
+	sonuc=true;
+	 let crs=students.get(i).course;
+	 report(studentId+ " numaralı kişinin aldıkları : "+crs);
+	 }
+
+    }
+     if(!sonuc){
+     report("bu numarada öğrenci yoktur.");
+     }
+	}
+function getCoursesGivenRoom(){
+    let room=roomId.value;
+	if(!roomId.value){
+	report("alanı doldurun.");
+	}
+	report(room+"; sınıfında ");
+	var sonuc=false
+    for (var i=0;i<courses.size;i++) {
+	  for(var j=0;j<courses.get(i).rooms.length;j++){
+        if(room == courses.get(i).rooms[j]){
+		sonuc=true;
+	    report(courses.get(i).name);
+		
+        }
+      }
+    }
+	report(" coursesları var");
+	if(!sonuc){
+    report("bu isimde room bulunmamakta.");
+    }
+}
+
+function getStdGivenClass(){
+    let courseName=courseCode.value;
+	if(!courseCode.value){
+	report("alanı doldurun.");
+	}
+	var sonuc=false;
+	for (var i=0;i<students.size;i++) {
+      for(var j=0;j<students.get(i).course.length;j++){
+	    if( courseName == students.get(i).course[j]){
+        report(courseName+" dersini alanlar : "+students.get(i).name+" "+students.get(i).id);
+	    sonuc=true;
+        }
+      }
+    } 
+    if(!sonuc){
+    report("bu isimde course bulunmamakta.");
+    }
+}
+
+function getTotalNumberCourses(){
+    let room=roomId.value;
+	let counter=0;
+	if(!roomId.value){
+	report("alanı doldurun.");
+	}
+	var sonuc=false;
+    for (var i=0;i<courses.size;i++) {
+	  for(var j=0;j<courses.get(i).rooms.length;j++){
+        if(room == courses.get(i).rooms[j]){
+		counter++;
+		sonuc=true;
+	   
+        } 
+      }
+    }
+
+    if(!sonuc){
+    report("bu isimde room bulunmamakta.");
+    }
+	else{
+		report(counter+ " tane courses var");
+	}
+}
+
+
+function getSchedule(){
+    let studentId=Number(stdId.value);
+    if(!stdId.value){
+	report("alanı doldurun.");
+	}
+	var sonuc=false;
+	for (var i=0;i<students.size;i++) {
+	 if(students.get(i).id == studentId){
+	report(studentId+" numaralı öğrencinin ; ");
+	  for (var j=0;j<students.get(i).course.length;j++) {
+
+	    for (var k=0;k<courses.size;k++) {
+	      if(courses.get(k).name == students.get(i).course[j]){
+		  sonuc=true;
+	       report(courses.get(k).name+" dersi "+courses.get(k).date+"  tarihinde "
+	       +courses.get(k).time+" saatinde ");
+            for(var m=0;m<courses.get(k).rooms.length;m++){
+	        report(courses.get(k).rooms[m]);
+	        }
+              report(" sınıflarındadır \n");		
+	      }
+	
+	    }
+	
+	 }
+	}
+	
+   }
+    if(!sonuc){
+    report("bu isimde öğrenci bulunmamakta.");
+    }
+
+}
+
+var enbuyuk=-1;
+function findBest(){
+
+	for (var i=0;i<students.size;i++) {
+	 if(enbuyuk< students.get(i).gpa){
+	  enbuyuk=students.get(i).gpa;	
+	  }
+	}
+     report("en buyuk ortalama "+enbuyuk );	
+	    for (var i=0;i<students.size;i++) {
+	      if(enbuyuk == students.get(i).gpa){
+	      report(students.get(i).id+" numaralı "+students.get(i).name);
+	 
+	      }
+	
+	    }
+
+}
+
+
+</script>
+</head>
+
+<body>
+
+<h2 id=title></h2>
+
+<button onClick='randomStd()'>Random</button>
+<button onClick='findBest()'>Best GPA</button>
+<button onClick='aboveGPA()'>Above a given GPA</button>
+<button onClick='getCoursesGivenStdId()'>Get Courses a given student id</button>
+<button onClick='getStdGivenClass()'>Get Students a given course code</button>
+<button onClick='getSchedule()'>Get schedule</button>
+<button onClick='getCoursesGivenRoom()'>Get courses a given room</button>
+<button onClick='getTotalNumberCourses()'>Total number of courses in a given room</button>
+<button onClick='tarih()'>Tarih</button>
+<button onClick='out.innerText=""'>Clear</button>
+
+<p>Student id: 
+<input type=number id="stdId" value=216562332>
+</p>
+<p>Course code: 
+<input type=text id="courseCode" value="BPP 101">
+</p>
+<p>GPA: 
+<input type=number id="gpaid"  value=3.3 >
+</p>
+<p>Room: 
+<input type=text id="roomId"  value="GG306" >
+</p>
+<p id=out >Result:</p>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<script>
+	var students=new Map();
+    var courses=new Map();
+	var db=new Database();    
+	title.innerText = document.title;
+    sample.innerText = db.readStudentsData+"\n"+db.addStudents;
+
+    db.readStudentsData("Students.txt")
+	db.readCoursesData("Courses.txt")
+	
+</script>
+
+</body>
+</html>
