@@ -1,7 +1,7 @@
 # odevler
 [HW1](https://beyzakoser.github.io/odevler/Array%20Demo.html)
 <br>
-[HW2](https://beyzakoser.github.io/odevler/ileri%20programlama/Database.html)
+[HW2](https://beyzakoser.github.io/odevler/Database.html)
 <br>
 [Inspector](https://beyzakoser.github.io/odevler/inspector.html)
 <br>
