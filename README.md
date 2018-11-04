@@ -1,6 +1,8 @@
 # odevler
 [HW1](https://beyzakoser.github.io/odevler/Array%20Demo.html)
 <br>
+[CW2](https://beyzakoser.github.io/odevler/Array%20Demo.html)
+<br>
 [CW3](https://beyzakoser.github.io/odevler/inspector.html)
 <br>
 [CW4](https://beyzakoser.github.io/odevler/index.html)
