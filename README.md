@@ -10,3 +10,5 @@
 [HW2](https://beyzakoser.github.io/odevler/Database.html)
 <br>
 [CW5](https://beyzakoser.github.io/odevler/dosya.html)
+<br>
+[CW6](https://beyzakoser.github.io/odevler/CW6/timing.html)
