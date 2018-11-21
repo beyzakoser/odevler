@@ -16,4 +16,7 @@
 [HW3](https://beyzakoser.github.io/odevler/HW3/HW3.html)
 <br>
 [CW7](https://beyzakoser.github.io/odevler/CW7/CW7.html)
+<br>
+[dene](https://beyzakoser.github.io/odevler/CW7/app.html)
+
 
