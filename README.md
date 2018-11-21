@@ -17,8 +17,8 @@
 <br>
 [CW7](https://beyzakoser.github.io/odevler/CW7/CW7.html)
 <br>
-[dene](https://beyzakoser.github.io/odevler/CW7/app.html)
-[scd](https://maya-karahbala.github.io/advancedpro/cw7/app.html)
+
+[scd](https://beyzakoser.github.io/odevler/CW7/app.html)
 
 
 
