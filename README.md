@@ -19,6 +19,7 @@
 <br>
 
 [scd](https://beyzakoser.github.io/odevler/CW7/app.html)
+[dene](//beyzakoser.github.io/odevler/CW7/app.html)
 
 
 
