@@ -12,3 +12,5 @@
 [CW5](https://beyzakoser.github.io/odevler/dosya.html)
 <br>
 [CW6](https://beyzakoser.github.io/odevler/CW6/timing.html)
+<br>
+[HW3](https://beyzakoser.github.io/odevler/HW3/deneme3.html)
