@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>CW7 </title>
+</head>
+
+<script>
+
+
+function ekle() { 
+    var name = isim.value;
+    list.push(name);
+    var surname = soyisim.value;
+    list.push(surname);
+    var yasi = Number(yas.value);
+    list.push(yasi);
+
+    let row = "<th></th>";
+    row += "<th>"+"isim"+"</th>";
+    row += "<th>"+"Soyisim"+"</th>";
+	row += "<th>"+"Yaş"+"</th>";
+    let text = "<tr>"+row+"</tr>";
+    for (let i = 0; i < list.length/3; i++) {
+       row = "<th>"+"</th>";
+       
+	   row +="<td>"+list[i*3]+"</td>";
+	   row +="<td>"+list[i*3+1]+"</td>";
+	   row +="<td>"+list[i*3+2]+"</td>";
+       text += "<tr>"+row+"</tr>";
+    }
+   tablo.innerHTML = text;
+}
+
+
+
+</script>
+
+<style>
+    table { border-collapse: separate; }
+    th { color: black; padding: 3px 3px; }
+    td { 
+        border: 2px solid black; 
+        padding: 5px 5px; 
+        text-align: center; 
+    }
+    td:hover .tip { visibility: visible; }
+    .tip {
+        visibility: hidden;
+        font-size: small;
+        background-color: black;
+        color: yellow;
+        text-align: center;
+        padding: 5px 5px;
+        position: absolute;
+    }
+</style>
+
+<body>
+<center>
+<h2 id=title></h2>
+
+
+
+<table id="tablo"></table>
+
+<p id=out style="font-size:small"></p>
+
+
+  İsim: 
+  <input type=text id=isim style="width:60px" value="beyza">
+  Soyisim: 
+  <input type=text id=soyisim style="width:60px" value="koser">
+  Yaş: 
+  <input type=number id=yas style="width:60px" value=20>
+  <br><br>
+  <input type=button value="Ekle" onclick="ekle()">
+
+</center>
+
+<hr />
+<b>Sample code</b>
+<pre id=sample></pre>
+<hr />
+
+<script>
+    title.innerText = document.title;
+    sample.innerText = ekle.toString();
+    const list=[];
+   
+</script>
+
+</body>
+</html> 
+

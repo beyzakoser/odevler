@@ -1,0 +1,35 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Örnekleri </title>
+    <link rel="manifest" href="manifest.json">
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker
+        .register(' https://beyzakoser.github.io/odevler/CW7/sw.js')
+        .then((reg) => { console.log('SW Registered', reg) })
+        .catch(console.log)
+    }
+  </script>
+  <style>
+    h3 { padding: 12px 0 0 20px; }
+    p  { padding: 0 0 0 20px; }
+    li { padding: 3px; }
+  </style>
+</head>
+
+
+<body>
+
+
+<li>
+<a href="https://beyzakoser.github.io/odevler/HW3/HW3.html">HW3</a>
+  </li>
+<li>
+<a href="https://beyzakoser.github.io/odevler/CW7/CW7.html">CW7</a>
+  </li>
+
+
+</body>
+</html>
