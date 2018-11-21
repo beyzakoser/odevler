@@ -1,0 +1,235 @@
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Animation </title>
+
+  <style>
+
+body {
+  background: url("yagmur.gif");
+  
+}
+.animation{
+  width : 100%;
+  padding : 20px;
+  box-sizing : border-box;
+  margin: 5px auto;
+  
+  }
+.su{
+
+position :absolute;
+left:15px;
+top: 630px;
+height: 100px;
+width: 1440px;
+
+border-bottom:5px groove #0f0f0f;
+border-left:5px groove #0f0f0f;
+border-right:5px groove #0f0f0f;
+   
+background-image:url(su.png);
+background-repeat:repeat-x;
+transform.translate(-50%,-50%);
+ animation-name:  suDolsun;
+animation-duration: 15s;
+animation-iteration-count:Infinite;
+
+}
+
+.dolanSu{
+
+background-image:url(su.png);
+background-repeat:repeat-x;
+-webkit-background-clip:text;
+
+ animation-name:  suDolsun;
+animation-duration: 15s;
+animation-iteration-count:Infinite;
+}
+ 
+.bulut{
+
+transform :translate(100px,10px);
+
+}
+.bulut:nth-child(2){
+
+transform :translate(500px,-80px);
+
+
+}
+.bulut:nth-child(3){
+
+transform :translate(1000px,-370px);
+
+}
+
+.buyukDamla{
+  position: relative;
+  left: 5px;
+  top: -290px;
+animation-name: damlaAnim ;
+animation-duration: 3s;
+animation-iteration-count:Infinite;
+
+
+}
+.buyukDamla:nth-child(2){
+  position: relative;
+  left: 420px;
+   top: 100px;
+
+animation-name: damlaAnim ;
+animation-delay: 1s;
+animation-iteration-count:Infinite;
+
+}
+.buyukDamla:nth-child(3){
+  position: relative;
+  left: 950px;
+  top: -150px;
+
+animation-name: damlaAnim ;
+animation-delay: 0.5s;
+animation-iteration-count:Infinite;
+
+}
+.damla{
+  position: relative;
+  left: 140px;
+  top: 5px;
+width : 30px;
+height: 30px;
+background-color: #0770b2;
+border-radius: 50%;
+border-top-right-radius:0;
+transform: rotate(-45deg);
+
+
+}
+.damla:nth-child(2){
+  position: relative;
+  left: 190px;
+ animation-delay: 2s;
+
+
+}
+.damla:nth-child(3){
+  position: relative;
+  left: 240px;
+  animation-delay: 0.5s;
+
+}
+.damla:nth-child(4){
+  position: relative;
+  left: 140px;
+ animation-delay: 2s;
+
+
+}
+.damla:nth-child(5){
+  position: relative;
+  left: 200px;
+  animation-delay: 0.5s;
+
+}
+@keyframes damlaAnim{
+from{
+transform: translateY(-400px);
+
+}
+to{
+
+{ transform: translateY(100px);
+}
+
+}
+
+}
+@keyframes suDolsun{
+0%{
+
+background-position:left 0px top 300px;
+}
+50%{
+
+background-position:left 0px top -50px;
+}
+70%{
+
+background-position:left 0px top 500px;
+}
+
+	
+  </style>
+</head>
+<body>
+
+<div class = "animation">
+
+   <div class="buyukBulut"> 
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   <div class="bulut"> <img src = "cloud.png" id = "bulut"></div>
+   </div>
+
+    <div class="buyukDamla"> 
+   <div class="damla"></div>
+   <div class="damla"></div>
+    <div class="damla"></div>
+	  <div class="damla"></div>
+    <div class="damla"></div>
+  </div> 
+     
+    <div class="buyukDamla"> 
+   <div class="damla"></div>
+   <div class="damla"></div>
+    <div class="damla"></div>
+	  <div class="damla"></div>
+    <div class="damla"></div>
+  </div> 
+      <div class="buyukDamla"> 
+   <div class="damla"></div>
+   <div class="damla"></div>
+    <div class="damla"></div>
+	  <div class="damla"></div>
+    <div class="damla"></div>
+  </div>
+<div class="su"> 
+  <div class="dolanSu"></div>
+   </div> 
+ </div> 
+<script>
+
+window.onload = function() { 
+//animate kullanmış olmak için bu kısmı yazdım diğer kısımları Element.animate olmadan yaptım.
+let i;
+for(i=0;i<3;i++){
+ 
+	    document.getElementsByClassName("buyukBulut")[0].animate([
+        // keyframes
+		
+        { transform: 'scale(1.05,1.05)' },
+		{ transform: 'scale(1,1)' },
+		{ transform: 'scale(1.05,1.05)' },
+	
+        
+		
+        ], { 
+        // timing options
+		
+        duration: 3000,
+        iterations: Infinity,
+	
+    })}
+
+
+};
+
+
+
+</script>
+ </body>
+</html>
