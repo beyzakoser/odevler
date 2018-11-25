@@ -7,7 +7,7 @@
     <meta name="author" content="Beyza Koşer, Istanbul, 2018" />
     <meta name="description" content="Advanced Programming" />
     <title>JS Örnekleri </title>
-    
+    <link rel="icon" sizes="192x192" href="icon.png"> 
     <link rel="manifest" href="manifest.json">
   <script>
     if ('serviceWorker' in navigator) {
@@ -17,53 +17,126 @@
         .catch(console.log)
     }
   </script>
-  <style>
-    h3 { padding: 50px 0 0 20px; }
-    p  { padding: 0 0 0 20px; }
-    li { padding: 3px; }
-	body{background-color:#ccdcde;
-	background: url("yagmur.gif");}
-  </style>
+  <style type="text/css">
+h3 { color: #ffffff; }
+h4 { color: #ffffff; }
+
+body{
+background: url("arkaplan2.gif");
+}
+
+.menu{
+  width : 100%;
+  margin: 5px auto;
+  }
+.kutu{ 
+width : 140px;
+height: 35px;
+margin-bottom:5px; /*linkler arası bosluk*/ 
+display: block; 
+float:center;  
+line-height: 32px; 
+padding: 0 10px; 
+background-color:#484a4c; 
+border:4px double #ffffff; 
+
+}
+.kutu a{
+color: #ffffff;  
+display:block;
+position-relative;
+
+}
+
+.kutu:hover {
+
+background:#cb1b41;
+}
+.kutu:hover:nth-child(2){
+background:#1bcbb0;
+}
+.kutu:hover:nth-child(3){
+background:#cb511b;
+}
+.kutu:hover:nth-child(4){
+background:#cb9b1b;
+}
+.kutu:hover:nth-child(5){
+background:#5c6f12;
+}
+.kutu:hover:nth-child(6){
+background:#d09fa9;
+}
+.kutu:hover:nth-child(7){
+background:#d30dce;
+}
+.kutu:hover:nth-child(8){
+background:#6ff59e;
+}
+.kutu:hover:nth-child(9){
+background:#b5b652;
+}
+.kutu:hover:nth-child(10){
+background:#d21a11;
+}
+
+.kutu:hover:nth-child(12){
+background:#4c96a4;
+}
+
+</style>
 </head>
 
 <body>     
 <center>
 <h3>JavaScript Örnekleri </h3>
-      
-<ul>
-<h3>Homeworks</h3>
-HW1
-<a href="https://beyzakoser.github.io/odevler/Array%20Demo.html">Courses Array</a><br>
+ <h4>Homeworks</h4>     
+<div class="menu">
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/Array%20Demo.html">Courses </a></div>
 
-HW2
-<a href="https://beyzakoser.github.io/odevler/Database.html">Database</a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/Database.html">Database</a></div>
 
-HW3
-<a href="https://beyzakoser.github.io/odevler/HW3/HW3.html">Animation </a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/HW3/HW3.html">Animation</a></div>
 
-<h3>CW</h3>
+</div>
+<h4>CW</h4>
+<div class="kutu"> 
 
-CW2
-<a href="https://beyzakoser.github.io/odevler/Array%20Demo.html">Array Operations </a><br>
+<div><a href="https://beyzakoser.github.io/odevler/Array%20Demo.html">Array Operations </a></div>
 
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/inspector.html">Inspector </a></div>
 
-CW3
-<a href="https://beyzakoser.github.io/odevler/inspector.html">Inspector </a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/index.html">Index</a></div>
 
-CW4
-<a href="https://beyzakoser.github.io/odevler/index.html">Index</a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/dosya.html">File compare</a></div>
 
-CW5
-<a href="https://beyzakoser.github.io/odevler/dosya.html">File compare</a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/CW6/timing.html">Timing</a></div>
 
-CW6
-<a href="https://beyzakoser.github.io/odevler/CW6/timing.html">Timing</a><br>
+</div>
+<div class="kutu"> 
+<div><a href="https://beyzakoser.github.io/odevler/CW7/CW7.html">Table</a></div>
 
-CW7
-<a href="https://beyzakoser.github.io/odevler/CW7/CW7.html">Table</a><br>
-<h5>My Repo</h5>
-<a href="https://github.com/beyzakoser/odevler">My Repo</a><br>
-</ul>
+</div>
+<h4>My Repo</h4>
+<div class="kutu"> 
+<div><a href="https://github.com/beyzakoser/odevler">My Repo</a></div>
+
+</div>
+
+</div>
 
 </center>
   </body>
