@@ -2,7 +2,7 @@
   "name": "Advanced Programing",
   "start_url": "/odevler/homeworks.html",
   "display": "standalone",
-  "background_color": "cyan",
+  "background_color": "pink",
   "icons": [
     {
       "src": "icon.png",
