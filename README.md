@@ -21,7 +21,7 @@
 <br>
 [CW7](https://beyzakoser.github.io/odevler/CW7/CW7.html)
 <br>
-[CW8](https://beyzakoser.github.io/odevler/svg.html)
+[CW9](https://beyzakoser.github.io/odevler/svg.html)
 <br>
 
 
