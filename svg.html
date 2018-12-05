@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width">
+    <title>SVG and Canvas </title>
+
+  <style>
+    svg {
+        background-color: #d2cece;
+        font: 15px arial, sans-serif;
+        border: 2px double black; 
+
+    }
+body{
+ background-color: #b7b4b4;
+}
+  </style>
+</head>
+
+<body>
+
+<h2>Using SVG</h2>
+<svg id="svg" width="700" height="400">
+  <circle id="circle"cx="300" cy="170" r="70" style="fill:yellow;stroke:black;stroke-width:7"></circle>
+  <text x="300" y="170" fill="black">Daire</text>
+  <rect id="rectange"x="500" y="120" rx="20" ry="20"width="150" height="100" style="fill:pink;stroke:green;stroke-width:4"></rect>
+  <text x="550" y="160" fill="black">Dikdörtgen</text>
+  <polygon id="yıldız2" points="100,10 40,198 190,78 10,78 160,198" 
+  style="fill:grey;stroke:purple;stroke-width:6;" />
+</svg>
+<p>SVG elements are controllable and scalable</p>
+
+
+<p>Dairenin içini değiştir: 
+<input id="daire" type="color" value="#ff0000"> <br> </p>
+<p>Dikdörgenin içini değiştir: 
+<input id="dikdortgen" type="color" value="#c8a2d7"> <br> </p>
+
+<p>Yıldızın içini değiştir: 
+<input id="yıldız" type="color" value="#47a2bc"> <br> </p>
+
+<input type=button value="Dikdörtgenin kenar rengini değiştir"   onClick="rectange.style.stroke='red';"><br> <br>
+
+
+<input type=button value="Daireyi büyüt "   onClick="daireyiBuyut()"> <br> <br>
+
+<input type=button value="Daireyi kaydır "   onClick="daireyikaydır()"> <br>
+
+
+<script>
+"use strict";
+
+function daireyiDegistir(event) {
+  var p = document.querySelector("p");
+
+  if (p) {
+    circle.style.fill = event.target.value;
+  }
+}
+daire.addEventListener("input",daireyiDegistir,false);
+daire.addEventListener("change",updateAll,false);
+function updateAll(event) {
+  document.querySelectorAll("circle").forEach(function(circle) {
+    circle.style.fill = event.target.value;
+  });
+}
+function dikdorgeniDegistir(event) {
+  var p = document.querySelector("p");
+
+  if (p) {
+    rectange.style.fill = event.target.value;
+  }
+}
+dikdortgen.addEventListener("input",dikdorgeniDegistir,false);
+dikdortgen.addEventListener("change",updateAll,false);
+function updateAll(event) {
+  document.querySelectorAll("rectange").forEach(function(rectange) {
+    rectange.style.fill = event.target.value;
+  });
+}
+function yıldızıDegistir(event) {
+  var p = document.querySelector("p");
+
+  if (p) {
+    yıldız2.style.fill = event.target.value;
+  }
+}
+yıldız.addEventListener("input",yıldızıDegistir,false);
+yıldız.addEventListener("change",updateAll,false);
+function updateAll(event) {
+  document.querySelectorAll("yıldız2").forEach(function(yıldız2) {
+    yıldız2.style.fill = event.target.value;
+  });
+}
+function daireyiBuyut(r){
+document.getElementById('circle').setAttribute('r',100);
+
+}
+function daireyikaydır(cy){
+var c=document.getElementById('circle');
+c.cy.baseVal.value+=60;
+
+}
+
+
+
+</script>
+
+
+</body></html>
