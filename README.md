@@ -23,6 +23,8 @@
 <br>
 [CW9](https://beyzakoser.github.io/odevler/svg.html)
 <br>
+[CW10](https://beyzakoser.github.io/odevler/projeDeneme.html)
+<br>
 
 
 
