@@ -1,0 +1,444 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Hedef 4</title>
+	<script type="text/javascript">
+
+		var oyunKontrolu = false; 
+		var aktifOyuncu= 0; 
+		var oyun = [];
+		var oyuncuRengi = []; 
+		oyuncuRengi[1] = "kırmızı";
+		oyuncuRengi[2] = "sarı"; 
+
+		function oyunaBasla() {
+
+			if (oyunKontrolu == true) return false; 
+			oyunKontrolu = true;  
+				/* 
+				| 0,0 | 0,1 | 0,2 | 0,3 | 0,4 | 0,5 | 0,6 |
+				| 1,0 | 1,1 | 1,2 | 1,3 | 1,4 | 1,5 | 1,6 |
+				| 2,0 | 2,1 | 2,2 | 2,3 | 2,4 | 2,5 | 2,6 |
+				| 3,0 | 3,1 | 3,2 | 3,3 | 3,4 | 3,5 | 3,6 |
+				| 4,0 | 4,1 | 4,2 | 4,3 | 4,4 | 4,5 | 4,6 |
+				| 5,0 | 5,1 | 5,2 | 5,3 | 5,4 | 5,5 | 5,6 |
+				
+				*/
+				for (satir=0; satir<=5; satir++) {
+					oyun[satir] = [];
+					for (sutun=0; sutun<=6; sutun++) {
+						oyun[satir][sutun] = 0;
+					}	
+				}		
+				
+				ciz(); 			
+				aktifOyuncu= 1; 
+				degistir(); 
+				
+			}
+			
+
+			function ciz() {
+				kazanan();
+				for (sutun = 0; sutun<=6; sutun++) {
+					for (satir=0; satir<=5; satir++) {
+
+						document.getElementById('daire_'+satir+'_'+sutun).innerHTML ="<span class='parca oyuncu"+oyun[satir][sutun]+"'> </span>";
+					}	
+				}
+			}
+			function kazanan() {
+
+				for (i=1; i<=2; i++) {
+					
+					for (sutun = 0; sutun <=3; sutun++) {
+						for (satir = 0; satir <=5; satir++) {
+							
+							if (oyun[satir][sutun] == i) {
+								if ((oyun[satir][sutun+1] == i) && (oyun[satir][sutun+2] == i) && (oyun[satir][sutun+3] == i)) {
+									oyunuBitir(i);
+									return true; 
+								}
+							}
+						}
+					}
+				}
+
+						for (i=1; i<=2; i++) {
+					
+					for (sutun = 0; sutun <=6; sutun++) {
+						for (satir = 0; satir <=2; satir++) {
+						
+							if (oyun[satir][sutun] == i) {
+								if ((oyun[satir+1][sutun] == i) && (oyun[satir+2][sutun] == i) && (oyun[satir+3][sutun] == i)) {
+									oyunuBitir(i); 
+									return true; 
+								}
+							}
+						}
+					}
+				}
+				
+				for (i=1; i<=2; i++) {
+				
+					for (sutun = 0; sutun <=3; sutun++) {
+						
+						for (satir = 0; satir <=2; satir++) {
+							
+							if (oyun[satir][sutun] == i) {
+								if ((oyun[satir+1][sutun+1] == i) && (oyun[satir+2][sutun+2] == i) && (oyun[satir+3][sutun+3] == i)) {
+									oyunuBitir(i);
+									return true;
+								}
+							}
+						}
+					}
+				}
+
+				
+				for (i=1; i<=2; i++) {
+					
+					for (sutun = 0; sutun <=3; sutun++) {
+						
+						for (satir = 3; satir <=5; satir++) {
+						
+							if (oyun[satir][sutun] == i) {
+								if ((oyun[satir-1][sutun+1] == i) && (oyun[satir-2][sutun+2] == i) && (oyun[satir-3][sutun+3] == i)) {
+									oyunuBitir(i);
+									return true;
+								}
+							}
+						}
+					}
+				}
+			}
+			function oyunuBitir(kazanankisi) {
+				oyunKontrolu = false; 
+				if(kazanankisi == 1){ //kırmızı kazandııysa
+				document.getElementById('kazananBilgisi').innerHTML = " <img id='winner' src='kirmizi.png' style='visible'>"; 
+				
+				
+
+				}
+				else if(kazanankisi == 2){ //kazanan sari ise
+				document.getElementById('kazananBilgisi').innerHTML = " <img id='winner' src='sari.png' >"; 
+				
+				
+
+
+			}
+			
+
+			}
+			function degistir() {
+				if (oyunKontrolu) { 
+					
+					document.getElementById('siraBilgisi').innerHTML = "Sıra: " +" <span class='oyuncu"+aktifOyuncu+"'>(" + oyuncuRengi[aktifOyuncu] + ")</span>";
+				}
+			}			
+			
+			function tasAt(sutun) {
+
+
+				for (satir=5; satir>=0; satir--) { 
+					if (oyun[satir][sutun] == 0) {
+
+						oyun[satir][sutun] = aktifOyuncu;
+						ciz(); 
+
+						if (aktifOyuncu== 1) {
+							aktifOyuncu= 2;
+						} else {
+							aktifOyuncu= 1;
+						}
+						degistir();
+						return true;
+					}
+				}
+			}
+			function durdur() {
+		muzik.pause();
+
+	}
+	function baslat(){
+		muzik.play();
+	}
+
+
+
+
+		</script>
+		
+		<style>
+		body{
+			background-color: #DDDDDD;
+			background-size: 100% ;
+		}
+
+
+		.parca {
+			height: 70px;
+			width: 70px;
+			display:block;
+			border-radius: 50px;
+			margin-left: auto;
+			margin-right: auto;
+
+		}
+
+		/* bu oyuncu değil sadece yuvarlak arka planı için */
+		.oyuncu0 {
+			background-color: #DDDDDD; 
+			opacity: 0.4;
+		}
+
+		
+		.oyuncu1 {
+			background-color: #fa2020;
+		}
+
+
+		.oyuncu2 {
+			background-color: #f6d71c;	
+		}
+
+
+		.hepsi{
+			
+			border: 3px dashed #2d2b2b;
+			border-radius:13%;
+			height: 630px;
+			width: 750px;
+			margin: auto;
+			background-color: #68a3ae;
+			animation-name: anim;
+			animation-duration: 5s;
+
+			animation-iteration-count:Infinite;
+		}
+		
+		.daire {
+			border: 2px none #4d4a48;	
+			height: 80px;
+			width: 80px;
+
+
+
+		}
+		.cik{
+			position: absolute; 
+			top:50px; 
+			left:100px;
+		}
+		.cik:hover{
+			opacity: 0.7;
+			animation-name: dondur;
+			animation-duration: 2s;
+		}
+		.tekrar{
+margin-top: 25px;
+
+
+		}
+		.tekrar:hover{
+			opacity: 0.7;
+			animation-name: dondur;
+			animation-duration: 2s;
+
+		}
+.ses{
+	margin-top: 25px;
+	}
+				.ses:hover{
+
+			opacity: 0.7;
+			animation-name: dondur;
+			animation-duration: 2s;
+
+		}
+				.ses2{
+			margin-top: 25px;
+
+		}
+
+				.ses2:hover{
+			opacity: 0.7;
+			animation-name: dondur;
+			animation-duration: 2s;
+
+		}
+		.tamamı{
+            
+	   margin: auto;
+	   padding-left: 15px;
+		}
+	.butonlar{
+       position: absolute;
+		width: 100px;
+		height: 360px;
+		top: 70px;
+		margin: auto;
+		margin-right: 50px;
+
+
+	}
+
+	
+
+		button{
+
+			width: 80px; height: 25px;
+		}
+
+		@keyframes anim{
+			0%{
+
+				transform: scale(1,1);
+			}
+			50%{
+
+				transform: scale(0.95,0.95);
+			}
+			70%{
+				transform: scale(1,1);
+			}
+		}
+		@keyframes dondur{
+			0%{
+
+				transform: rotate(0);
+
+			}
+			30%{
+
+				transform: rotate(20deg);
+			}
+			60%{
+				transform: rotate(-20deg);
+			}
+			100%{
+				transform: rotate(0);
+			}
+		}
+				@keyframes buyut{
+			0%{
+
+				transform: scale(0);
+
+			}
+			30%{
+
+				transform: scale(0.5);
+			}
+			60%{
+				transform: scale(0.9);
+			}
+			100%{
+				transform: scale(1.1);
+			}
+		}
+
+	
+	</style>
+
+</head>
+<body onload="oyunaBasla();">
+
+<audio id="muzik" loop="true">
+    <source src="muzik.mp3"  type="audio/mpeg" >
+    	
+</audio>
+<center>
+<div class="tamamı" >
+	<div class="butonlar">
+<div class="ses" >
+
+				<a href="javascript:baslat();"> 
+
+					<img  id="ses" src="resim1.png" width="100" height="60" onclick="baslat();"></a>
+
+				</div>
+				<div class="ses2" >
+				<a href="javascript:durdur();"> 
+
+					<img  id="ses" src="resim2.png" width="100" height="60" onclick="durdur();"></a>
+
+				</div>
+
+
+					<div class="tekrar" >
+						<a href="javascript:location.reload();"> 
+
+							<img  id="tekrar" src="again.png" width="110" height="65" onclick="location.reload();"></a>
+
+						</div>
+						</div>
+						
+                        	<h2>Hedef 4</h2> 
+                        										<div id="kazananBilgisi" class="kazananBilgisi">
+
+									</div>
+							<div class="hepsi">
+
+
+								<div id="kutu">
+									<center>
+									<br>
+									<div id="siraBilgisi">
+
+									</div>
+									<br>
+
+
+									<table id="oyunTablosu" class="oyunTablosu">
+
+										<thead>
+
+											<tr>
+
+												<td><center><button  onclick="tasAt(0);"> 1. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(1);"> 2. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(2);"> 3. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(3);"> 4. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(4);"> 5. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(5);"> 6. Sutun</button></center></td>
+												<td><center><button  onclick="tasAt(6);"> 7. Sutun</button></center></td>
+
+
+											</tr>
+
+										</thead>
+
+										<script>
+											/*daireleri tabloya ekledim */
+
+
+											for (var satir=0; satir<=5; satir++) {
+
+												document.writeln("<tr>");	
+												for (var sutun=0; sutun<=6; sutun++) {
+
+													document.writeln("<td id='daire_" + satir + "_"+ sutun +"' class='daire'></td>");							
+												}
+
+												document.writeln("</tr>");	
+
+											}	
+
+
+										</script>
+									</table>
+
+
+								</center>
+
+
+
+							</div>
+						</div>
+						</div>
+						</center>
+						
+					</body>
+					</html>
