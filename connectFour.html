@@ -3,6 +3,7 @@
 <html>
 <head>
 	<title>Hedef 4</title>
+	<link rel="icon" sizes="250x250" href="cloud.png">
 	<script type="text/javascript">
 
 		var oyunKontrolu = false; 
@@ -11,9 +12,11 @@
 		var oyuncuRengi = []; 
 		oyuncuRengi[1] = "kırmızı";
 		oyuncuRengi[2] = "sarı"; 
+		
 
 		function oyunaBasla() {
 
+         
 			if (oyunKontrolu == true) return false; 
 			oyunKontrolu = true;  
 				/* 
@@ -43,8 +46,10 @@
 				kazanan();
 				for (sutun = 0; sutun<=6; sutun++) {
 					for (satir=0; satir<=5; satir++) {
+						var daireAdi= 'daire_'+satir+'_'+sutun
 
-						document.getElementById('daire_'+satir+'_'+sutun).innerHTML ="<span class='parca oyuncu"+oyun[satir][sutun]+"'> </span>";
+						document.getElementById(daireAdi).innerHTML ="<span class='parca oyuncu"+oyun[satir][sutun]+"'> </span>";
+						
 					}	
 				}
 			}
@@ -116,7 +121,7 @@
 			function oyunuBitir(kazanankisi) {
 				oyunKontrolu = false; 
 				if(kazanankisi == 1){ //kırmızı kazandııysa
-				document.getElementById('kazananBilgisi').innerHTML = " <img id='winner' src='kirmizi.png' style='visible'>"; 
+				document.getElementById('kazananBilgisi').innerHTML = " <img id='winner' src='kirmizi.png' style='position: absolute'>"; 
 				
 				
 
@@ -139,7 +144,7 @@
 			}			
 			
 			function tasAt(sutun) {
-
+              if(oyunKontrolu){
 
 				for (satir=5; satir>=0; satir--) { 
 					if (oyun[satir][sutun] == 0) {
@@ -157,6 +162,7 @@
 					}
 				}
 			}
+		}
 			function durdur() {
 		muzik.pause();
 
@@ -190,7 +196,7 @@
 		/* bu oyuncu değil sadece yuvarlak arka planı için */
 		.oyuncu0 {
 			background-color: #DDDDDD; 
-			opacity: 0.4;
+			opacity: 0.3;
 		}
 
 		
@@ -211,6 +217,7 @@
 			height: 630px;
 			width: 750px;
 			margin: auto;
+			background-size: contain;
 			background-color: #68a3ae;
 			animation-name: anim;
 			animation-duration: 5s;
@@ -376,10 +383,11 @@ margin-top: 25px;
 						</div>
 						
                         	<h2>Hedef 4</h2> 
-                        										<div id="kazananBilgisi" class="kazananBilgisi">
+                        		
+							<div class="hepsi">
+										<div id="kazananBilgisi" class="kazananBilgisi" style="position: absolute; z-index: 4" >
 
 									</div>
-							<div class="hepsi">
 
 
 								<div id="kutu">
@@ -437,6 +445,12 @@ margin-top: 25px;
 
 							</div>
 						</div>
+						</p>
+<br>
+<p id = "referanslar" >References: </h4>
+<a href="https://www.w3schools.com/tags/att_audio_autoplay.asp" style="color:black">w3schools</a>&nbsp;
+<a href="https://stackoverflow.com/questions/14643617/create-table-using-javascript" style="color:black">stackoverflow</a>
+</p>
 						</div>
 						</center>
 						
