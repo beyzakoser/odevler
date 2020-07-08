@@ -1,6 +1,16 @@
 # odevler
 <li><strong>HW1</strong>
 <a href= "https://beyzakoser.github.io/odevler/Array%20Demo.html">Courses</a></li>
+<br>
+<li><strong>HW2</strong>
+<a href= "https://beyzakoser.github.io/odevler/Database.html">Database</a></li>
+<br>
+<li><strong>HW3</strong>
+<a href= "https://beyzakoser.github.io/odevler/HW3/HW3.html">Animation</a></li>
+<br>
+<li><strong>HW4</strong>
+<a href= "https://beyzakoser.github.io/odevler/homeworks.html">Homeworks Page</a></li>
+<br>
 
 [HW1](https://beyzakoser.github.io/odevler/Array%20Demo.html)
 <br>
