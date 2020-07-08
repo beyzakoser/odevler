@@ -25,15 +25,19 @@
 <li><strong>CW5</strong>
 <a href= "https://beyzakoser.github.io/odevler/dosya.html">File compare</a></li>
 <br>
+<li><strong>CW6</strong>
+<a href= "https://beyzakoser.github.io/odevler/CW6/timing.html">Timing</a></li>
+<br>
+<li><strong>CW7</strong>
+<a href= "https://beyzakoser.github.io/odevler/CW7/CW7.html">Table</a></li>
+<br>
+<li><strong>CW9</strong>
+<a href= "https://beyzakoser.github.io/odevler/CW7/CW7.html">SVG</a></li>
+<br>
+<li><strong>CW10</strong>
+<a href= "https://beyzakoser.github.io/odevler/projeDeneme.html">Proje Demo</a></li>
+<br>
 
-[CW2](https://beyzakoser.github.io/odevler/Array%20Demo.html)
-<br>
-[CW3](https://beyzakoser.github.io/odevler/inspector.html)
-<br>
-[CW4](https://beyzakoser.github.io/odevler/index.html)
-<br>
-[CW5](https://beyzakoser.github.io/odevler/dosya.html)
-<br>
 [CW6](https://beyzakoser.github.io/odevler/CW6/timing.html)
 <br>
 [CW7](https://beyzakoser.github.io/odevler/CW7/CW7.html)
