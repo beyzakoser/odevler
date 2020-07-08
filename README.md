@@ -1,4 +1,7 @@
 # odevler
+<li><strong>HW1</strong>
+<a href= "https://beyzakoser.github.io/odevler/Array%20Demo.html">Courses</a></li>
+
 [HW1](https://beyzakoser.github.io/odevler/Array%20Demo.html)
 <br>
 [HW2](https://beyzakoser.github.io/odevler/Database.html)
