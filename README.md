@@ -1,4 +1,4 @@
-# odevler
+# HW
 <li><strong>HW1</strong>
 <a href= "https://beyzakoser.github.io/odevler/Array%20Demo.html">Courses</a></li>
 <br>
@@ -12,15 +12,19 @@
 <a href= "https://beyzakoser.github.io/odevler/homeworks.html">Homeworks Page</a></li>
 <br>
 
-[HW1](https://beyzakoser.github.io/odevler/Array%20Demo.html)
-<br>
-[HW2](https://beyzakoser.github.io/odevler/Database.html)
-<br>
-[HW3](https://beyzakoser.github.io/odevler/HW3/HW3.html)
-<br>
-[HW4](https://beyzakoser.github.io/odevler/homeworks.html)
-
 # CW
+<li><strong>CW2</strong>
+<a href= "https://beyzakoser.github.io/odevler/Array%20Demo.html">Array Operations</a></li>
+<br>
+<li><strong>CW3</strong>
+<a href= "https://beyzakoser.github.io/odevler/inspector.html">Inspector</a></li>
+<br>
+<li><strong>CW4</strong>
+<a href= "https://beyzakoser.github.io/odevler/index.html">Index</a></li>
+<br>
+<li><strong>CW5</strong>
+<a href= "https://beyzakoser.github.io/odevler/dosya.html">File compare</a></li>
+<br>
 
 [CW2](https://beyzakoser.github.io/odevler/Array%20Demo.html)
 <br>
