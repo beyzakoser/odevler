@@ -32,19 +32,10 @@
 <a href= "https://beyzakoser.github.io/odevler/CW7/CW7.html">Table</a></li>
 <br>
 <li><strong>CW9</strong>
-<a href= "https://beyzakoser.github.io/odevler/CW7/CW7.html">SVG</a></li>
+<a href= "https://beyzakoser.github.io/odevler/svg.html">SVG</a></li>
 <br>
 <li><strong>CW10</strong>
 <a href= "https://beyzakoser.github.io/odevler/projeDeneme.html">Proje Demo</a></li>
-<br>
-
-[CW6](https://beyzakoser.github.io/odevler/CW6/timing.html)
-<br>
-[CW7](https://beyzakoser.github.io/odevler/CW7/CW7.html)
-<br>
-[CW9](https://beyzakoser.github.io/odevler/svg.html)
-<br>
-[CW10](https://beyzakoser.github.io/odevler/projeDeneme.html)
 <br>
 
 
